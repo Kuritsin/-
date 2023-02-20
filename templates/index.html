@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style></style>
+    <link href="../static/forma.css" rel="stylesheet"/>
+    <!--    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />-->
+    <!--    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>-->
+</head>
+
+<body>
+<h2>Toggle Switch</h2>
+
+<label class="switch">
+    <input type="checkbox" checked onchange="switch_changed()">
+    <span class="slider round"></span>
+</label>
+
+<br><br>
+<label id="LBL">Switch is On</label>
+{% if clk == 'click me' %}
+    <button> <a href="/index/">{{ clk }}</a></button>
+{% else %}
+    <button> <a href="/index1/">{{ clk }}</a></button>
+{% endif %}
+</body>
+</html>
+
+<script>
+    function switch_changed() {
+        lbl = document.getElementById('LBL').textContent;
+        if (lbl.localeCompare('Switch is On') == 0) {
+            document.getElementById('LBL').innerHTML = 'Switch is Off';
+        } else {
+            document.getElementById('LBL').innerHTML = 'Switch is On';
+        }
+    }
+</script>
